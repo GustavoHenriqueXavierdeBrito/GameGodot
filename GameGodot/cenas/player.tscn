@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ship.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Score.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 11.692 )
+
+[node name="player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32.0559, -0.33177, 16.6479, 23.3318 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="firepoint" type="Node2D" parent="."]
+position = Vector2( -0.0167522, -20.6075 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="recomeçar" type="Label" parent="CanvasLayer"]
+visible = false
+margin_left = 99.0
+margin_top = 248.0
+margin_right = 261.0
+margin_bottom = 276.0
+text = "Aperte R pra recomeçar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Score:   
+"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

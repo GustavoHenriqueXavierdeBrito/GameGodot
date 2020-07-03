@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemy-big.png" type="Texture" id=1]
+[ext_resource path="res://scripts/atirador.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.6551, 15.9324 )
+
+[node name="atirador" type="KinematicBody2D"]
+collision_layer = 8
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1.46487, 1.15963, 28.031, 32.9771 )
+__meta__ = {
+"_edit_group_": true
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://enemy-small.png" type="Texture" id=1]
+[ext_resource path="res://scripts/inimigoquerealatira.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.65684, 8.12502 )
+
+[node name="enemyatira" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -0.476341, 0.260858, 16.9243, 16.1086 )
+
+[node name="firepointenemy" type="Node2D" parent="."]
+position = Vector2( 0, 15.06 )
